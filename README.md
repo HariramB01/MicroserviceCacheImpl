@@ -1,4 +1,4 @@
-Caching: In the computing world, retrieving data from a database can be resource-intensive and time-consuming. 
+Caching: In the computing world, retrieving data from a database can be resource-intensive and time-consuming.   
 This is where Redis comes into play. 
 Redis helps serve frequently accessed or computed data efficiently, reducing the need to repeatedly query the database.
 
