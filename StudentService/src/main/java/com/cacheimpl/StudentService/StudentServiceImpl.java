@@ -75,6 +75,7 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public Student updateStudent(Long id, Student student) {
         Student existingStudentData = studentRepository.findById(id).get();
+
         existingStudentData.setEmail(student.getEmail());
         existingStudentData.setName(student.getName());
         Student redisStudentData = (Student) redisTemplate.opsForValue().get(CACHE_KEY_PREFIX+id);
