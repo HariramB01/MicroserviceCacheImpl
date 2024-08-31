@@ -63,7 +63,7 @@ public class StudentServiceImpl implements StudentService {
         if (studentFromDB.isPresent()) {
             Student student = studentFromDB.get(); // Cache miss
             // Store in Redis with TTL only if not already present
-            redisTemplate.opsForValue().setIfAbsent(CACHE_KEY_PREFIX + id, student, 10, TimeUnit.SECONDS);
+            redisTemplate.opsForValue().setIfAbsent(CACHE_KEY_PREFIX + id, student, 60, TimeUnit.SECONDS);
             System.out.println("Data from DB and added to cache");
             return Optional.of(student);
         }
